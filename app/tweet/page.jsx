@@ -5,14 +5,17 @@ import { Sidebar } from "@/app/_components/SideBar";
 import { TweetBar } from "@/app/_components/TweetBar";
 import { useState } from "react";
 import { FaArrowLeft, FaSearchengin } from "react-icons/fa6";
+import { useRouter } from "next/navigation"
 
 export default function Tweet() {
+    const router = useRouter();
     const [nav, setNav] = useState(false);
+    
     return <div className="home-user tweet-section">
         <Sidebar nav={nav} toggleNav={(val) => setNav(val)} />
         <div className="feed">
             <div className="header row">
-                <FaArrowLeft className="btn" onClick={() => router.push("/home")} />
+                <FaArrowLeft className="btn" onClick={() => router.back()} />
 
                 <div className="row w-100">
                     <h1 className="b-900 p-1">Post</h1>

@@ -9,9 +9,14 @@ export const ListChat = () => {
     const router = useRouter();
     const [chatMode, setChatMode] = useState(false);
 
+    const mediaQ = () => {
+        const match = window?.matchMedia("(max-width: 740px)")
+        match.matches ? router.push("/messages/chat") : setChatMode(true)
+    }
+
     return <div className="list-chat">
         {arr.map((item, i) => {
-           return <div className="item" key={i}  onClick={() => matchMedia("(max-width: 740px)")?.matches ? () => router.push("/messages/chat") : () => setChatMode(true)}>
+           return <div className="item" key={i}  onClick={mediaQ}>
                 <Image src={Img} alt="" className="img" />
                 <div className="space-1"></div>
                 <div className="col">
