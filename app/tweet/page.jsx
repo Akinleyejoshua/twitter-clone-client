@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation"
 export default function Tweet() {
     const router = useRouter();
     const [nav, setNav] = useState(false);
-    
+
     return <div className="home-user tweet-section">
         <Sidebar nav={nav} toggleNav={(val) => setNav(val)} />
         <div className="feed">
@@ -22,7 +22,6 @@ export default function Tweet() {
                 </div>
             </div>
             <div className="main">
-
                 <TweetBar />
             </div>
         </div>

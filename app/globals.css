@@ -806,7 +806,7 @@ footer a:hover {
   }
 
   .tweet .content img.img {
-    width: 90%;
+    width: 100%;
     height: max-content;
   }
 
@@ -1244,4 +1244,9 @@ footer a:hover {
 
 .blue{
   color: royalblue;
+}
+
+.comment .utils{
+  padding-bottom: 0;
+  border: none;
 }
