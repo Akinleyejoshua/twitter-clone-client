@@ -6,14 +6,12 @@ import { useState } from "react";
 export const ListChat = () => {
     const arr = [{}, {}, {}, {}, {}]
 
-    const matchMedia = () => matchMedia("(max-width: 740px)")
-
     const router = useRouter();
     const [chatMode, setChatMode] = useState(false);
 
     return <div className="list-chat">
         {arr.map((item, i) => {
-           return <div className="item" key={i}  onClick={matchMedia()?.matches ? () => router.push("/messages/chat") : () => setChatMode(true)}>
+           return <div className="item" key={i}  onClick={() => matchMedia("(max-width: 740px)")?.matches ? () => router.push("/messages/chat") : () => setChatMode(true)}>
                 <Image src={Img} alt="" className="img" />
                 <div className="space-1"></div>
                 <div className="col">
