@@ -230,7 +230,7 @@ footer a:hover {
 }
 
 .signin-modal button {
-  width: 20rem;
+  width: 100%;
   padding: 0.5rem;
   border-radius: 3rem;
   -webkit-border-radius: 3rem;
@@ -253,6 +253,10 @@ footer a:hover {
 .signin-modal form {
   margin: auto;
   padding: 0.5rem;
+}
+
+.signin-modal input{
+  width: 20rem;
 }
 
 @media screen and (max-width: 640px) {
@@ -285,6 +289,10 @@ footer a:hover {
     width: 100%;
   }
 
+  .signin-modal input{
+    width: 20rem;
+  }
+  
   .home svg.app-logo {
     height: 2rem;
     width: 2rem;
