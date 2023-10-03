@@ -6,8 +6,8 @@ import { useState } from "react";
 export const ListChat = () => {
     const arr = [{}, {}, {}, {}, {}]
 
-    const matchMedia = () => window?.matchMedia("(max-width: 740px)")
-   
+    const matchMedia = () => matchMedia("(max-width: 740px)")
+
     const router = useRouter();
     const [chatMode, setChatMode] = useState(false);
 
