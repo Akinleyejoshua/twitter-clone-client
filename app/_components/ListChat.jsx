@@ -1,0 +1,33 @@
+import Img from "../_assets/img.jpg";
+import Image from "next/image";
+import { useRouter } from "next/navigation"
+import { useState } from "react";
+
+export const ListChat = () => {
+    const arr = [{}, {}, {}, {}, {}]
+
+    const matchMedia = () => window?.matchMedia("(max-width: 740px)")
+   
+    const router = useRouter();
+    const [chatMode, setChatMode] = useState(false);
+
+    return <div className="list-chat">
+        {arr.map((item, i) => {
+           return <div className="item" key={i}  onClick={matchMedia()?.matches ? () => router.push("/messages/chat") : () => setChatMode(true)}>
+                <Image src={Img} alt="" className="img" />
+                <div className="space-1"></div>
+                <div className="col">
+                    <div className="name row">
+                        <p className="b-900">Akinleye</p>
+                        <div className="space">·</div>
+                        <small className="black">@AkinleyeJoshua9</small>
+                        <div className="space">·</div>
+                        <p>Jul 3</p>
+                    </div>
+                    <p className="black">You are welcome</p>
+                </div>
+
+            </div>
+        })}
+    </div>
+}
