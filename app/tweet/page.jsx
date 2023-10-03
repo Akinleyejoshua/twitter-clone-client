@@ -11,15 +11,16 @@ export default function Tweet() {
     return <div className="home-user tweet-section">
         <Sidebar nav={nav} toggleNav={(val) => setNav(val)} />
         <div className="feed">
-            <div className="main">
-                <div className="header row">
-                    <FaArrowLeft className="btn" onClick={() => router.push("/home")} />
+            <div className="header row">
+                <FaArrowLeft className="btn" onClick={() => router.push("/home")} />
 
-                    <div className="row w-100">
-                        <h1 className="b-900 p-1">Post</h1>
-                    </div>
+                <div className="row w-100">
+                    <h1 className="b-900 p-1">Post</h1>
                 </div>
-                <TweetBar/>
+            </div>
+            <div className="main">
+
+                <TweetBar />
             </div>
         </div>
         <div className="others">

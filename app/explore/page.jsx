@@ -6,7 +6,7 @@ import { useState } from "react";
 import { FaArrowLeft, FaSearchengin } from "react-icons/fa6";
 import { useRouter } from "next/navigation"
 import Image from "next/image";
-import Img1 from "../../app/img1.jpg";
+import Img1 from "../_assets/img1.jpg";
 
 
 export default function Explore() {
@@ -16,14 +16,11 @@ export default function Explore() {
     return <div className="home-user explore">
         <Sidebar nav={nav} toggleNav={(val) => setNav(val)} />
         <div className="feed">
+            <div className="header row">
+                <FaArrowLeft className="btn" onClick={() => router.push("/home")} />
+            </div>
             <div className="main">
-                <div className="header row">
-                    <FaArrowLeft className="btn" onClick={() => router.push("/home")} />
-                    {/* <div className="col">
-                        <h1>Josh</h1>
-                        <small>172 posts</small>
-                    </div> */}
-                </div>
+
                 <section className="trends t-1">
                     <p className="b-900 title">Trends for you</p>
                     <div className="trend col">

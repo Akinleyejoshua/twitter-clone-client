@@ -1,6 +1,5 @@
 "use client"
 
-import { FaApple, FaGoogle } from "react-icons/fa6"
 import { AppLogo } from "./AppLogo"
 import { AiOutlineKey, AiOutlineLogin, AiOutlineMail, AiOutlineUser } from "react-icons/ai"
 import { useRouter } from "next/navigation"
@@ -11,7 +10,7 @@ export const SignupModal = () => {
     return <section className="signin-modal">
         <div className="body">
             <div className="top">
-                <span onClick={() => router.push("/")}>&times;</span>
+                <span className="close" onClick={() => router.push("/")}>&times;</span>
                 <AppLogo />
             </div>
 

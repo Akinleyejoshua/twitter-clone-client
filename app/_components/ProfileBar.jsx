@@ -1,8 +1,8 @@
-import { FaBriefcase } from "react-icons/fa6";
-import Img from "../app/img.jpg";
-import Img1 from "../app/img1.jpg";
 import Image from "next/image";
 import { AiOutlineCalendar } from "react-icons/ai";
+import { FaBriefcase } from "react-icons/fa6";
+import Img from "../_assets/img.jpg";
+import Img1 from "../_assets/img1.jpg";
 
 
 export const ProfileBar = () => {

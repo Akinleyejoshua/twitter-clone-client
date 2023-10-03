@@ -1,5 +1,6 @@
 "use client"
 import { useRouter } from "next/navigation"
+import { AiOutlineLogin, AiOutlineUserAdd } from "react-icons/ai";
 import { FaGoogle, FaApple } from "react-icons/fa6"
 
 export const LoginBar = () => {
@@ -27,12 +28,19 @@ export const LoginBar = () => {
             <small className="m-auto">or</small>
             <div className="space"></div>
 
-            <button className="create-account" onClick={() => router.push("/signup")}>Create account</button>
+            <button className="create-account" onClick={() => router.push("/signup")}>
+                <AiOutlineUserAdd className="icon"/>
+                <div className="space"></div>
+                <p>Create Account</p>
+            </button>
             <small>By signing up, you agree to the <a href="#">Terms of Service</a>  and <a href="#"> Privacy Policy</a>, including <a href="#">Cookie Use</a> .</small>
         </form>
         <br />
         <h5>Already have an account?</h5>
         <br />
-        <button className="signin" onClick={() => router.push("/signin")}>Sign in</button>
+        <button className="signin" onClick={() => router.push("/signin")}>
+            <AiOutlineLogin className="icon"/>
+            <div className="space"></div>
+            <p>Sign in</p></button>
     </section>
 }

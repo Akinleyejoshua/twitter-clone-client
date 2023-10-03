@@ -1,6 +1,6 @@
 import './globals.css'
 import "./App.css"
-import "@fontsource/poppins/400.css"
+import "@fontsource/poppins/300.css"
 
 export const metadata = {
   title: "X it's what's happening / X",

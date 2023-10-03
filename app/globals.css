@@ -2,37 +2,11 @@
 @tailwind components;
 @tailwind utilities; */
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"); */
-
 * {
   margin: 0;
   font-family: "Poppins", sans-serif;
   padding: 0;
-  letter-spacing: .5px;
+  letter-spacing: 0.6px;
   box-sizing: border-box;
   font-weight: 300;
   font-size: 15px;
@@ -60,11 +34,11 @@ body {
 }
 
 .home h1 {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 
 .home h4 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .login-bar {
@@ -93,7 +67,7 @@ body {
   -moz-border-radius: 3rem;
   -ms-border-radius: 3rem;
   -o-border-radius: 3rem;
-  border: 1px solid rgb(208, 202, 202);
+  border: 1px solid rgba(65, 105, 225, 0.123);
   background-color: transparent;
   display: flex;
   justify-content: center;
@@ -103,7 +77,7 @@ body {
 }
 
 .login-bar button:hover {
-  background-color: rgba(65, 105, 225, 0.404);
+  background-color: rgba(65, 105, 225, 0.131);
 }
 
 .login-bar .icon {
@@ -179,7 +153,7 @@ footer a:hover {
   flex-direction: column;
 }
 
-.signin-modal .input{
+.signin-modal .input {
   display: flex;
   place-items: center;
   border-radius: 1rem;
@@ -190,9 +164,9 @@ footer a:hover {
   background-color: rgba(65, 105, 225, 0.025);
 }
 
-.signin-modal .btn{
+.signin-modal .btn {
   border: 1px solid rgba(65, 105, 225, 0.116);
-  padding: .25rem;
+  padding: 0.25rem;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -202,7 +176,7 @@ footer a:hover {
   min-width: 2rem;
 }
 
-.signin-modal input{
+.signin-modal input {
   width: 100%;
   border: none;
   background-color: transparent;
@@ -224,6 +198,7 @@ footer a:hover {
 .signin-modal svg.app-logo {
   height: 2rem;
   width: 2rem;
+  margin: 0;
 }
 
 .signin-modal .top {
@@ -232,17 +207,31 @@ footer a:hover {
   padding: 0.5rem;
 }
 
+.signin-modal .close{
+  background-color: rgba(255, 0, 0, 0.129);
+}
+
 .signin-modal .top span {
   border: none;
   font-size: 2rem;
   color: red;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
-  background-color: transparent;
+  background-color: rgba(255, 0, 0, 0.118);
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .signin-modal button {
   width: 20rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 3rem;
   -webkit-border-radius: 3rem;
   -moz-border-radius: 3rem;
@@ -257,6 +246,10 @@ footer a:hover {
   font-weight: bold;
 }
 
+.signin-modal button:hover{
+  background-color: rgba(65, 105, 225, 0.104);
+}
+
 .signin-modal form {
   margin: auto;
   padding: 0.5rem;
@@ -266,7 +259,7 @@ footer a:hover {
   .home {
     flex-direction: column;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .login-bar {
@@ -447,7 +440,8 @@ footer a:hover {
   background-color: whitesmoke;
 }
 
-.home-header button.active::after, .header button.active::after {
+.home-header button.active::after,
+.header button.active::after {
   content: "";
   position: absolute;
   margin: auto;
@@ -589,13 +583,13 @@ footer a:hover {
   /* letter-spacing: 0px; */
 }
 
-.tweet .content *{
+.tweet .content * {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.6);
   /* letter-spacing: 0px; */
 }
 
-.tweet .content .tag{
+.tweet .content .tag {
   color: royalblue;
 }
 
@@ -649,7 +643,7 @@ footer a:hover {
   overflow: auto;
 }
 
- .search {
+.search {
   padding: 1rem;
   background-color: whitesmoke;
   border-radius: 3rem;
@@ -661,7 +655,7 @@ footer a:hover {
   place-items: center;
 }
 
- .search input {
+.search input {
   border: none;
   background-color: transparent;
   width: 100%;
@@ -794,7 +788,6 @@ footer a:hover {
     font-size: 15px;
   } */
 
-  
   .tweet button {
     padding: 0rem;
     font-size: 15px;
@@ -821,8 +814,8 @@ footer a:hover {
   .draft img.img,
   .tweet .img img.img,
   .home-header img.img {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -840,7 +833,7 @@ footer a:hover {
     font-size: 13px;
   }
 }
-.others{
+.others {
   width: 60rem;
 }
 
@@ -861,12 +854,11 @@ footer a:hover {
   font-size: 12px;
 }
 
-
-.home-user.profile .home-header{
+.home-user.profile .home-header {
   display: none;
 }
 
-.header .btn{
+.header .btn {
   padding: 1rem;
   height: 4rem;
   width: 4rem;
@@ -874,21 +866,21 @@ footer a:hover {
   cursor: pointer;
 }
 
-.header .col{
+.header .col {
   justify-content: flex-start;
   margin: auto 0;
 }
 
-.banner{
+.banner {
   height: 15rem;
   width: 100%;
 }
 
-.profile .img-bar{
+.profile .img-bar {
   position: relative;
 }
 
-.home-user.profile .img-bar .img{
+.home-user.profile .img-bar .img {
   position: absolute;
   height: 10rem;
   width: 10rem;
@@ -902,23 +894,23 @@ footer a:hover {
   border: 5px solid white;
 }
 
-.profile-bar .bio{
+.profile-bar .bio {
   padding: 2rem;
 }
 
-.item-center{
+.item-center {
   place-items: center;
 }
 
-.black{
+.black {
   color: rgba(0, 0, 0, 0.898);
 }
 
-.profile{
+.profile {
   position: relative;
 }
 
-.profile .tab{
+.profile .tab {
   position: relative;
   bottom: 0;
   width: 100%;
@@ -927,7 +919,7 @@ footer a:hover {
   justify-content: center;
 }
 
-.profile .tab button{
+.profile .tab button {
   width: 100%;
   border: none;
   background: transparent;
@@ -935,7 +927,7 @@ footer a:hover {
   position: relative;
 }
 
-.tab button.active::after{
+.tab button.active::after {
   content: "";
   position: absolute;
   margin: auto;
@@ -952,15 +944,15 @@ footer a:hover {
   -o-border-radius: 3rem;
 }
 
-.explore .trends.t-1{
+.explore .trends.t-1 {
   background-color: transparent;
 }
 
-.black1{
+.black1 {
   color: rgba(0, 0, 0, 0.457);
 }
 
-.follow img.img{
+.follow img.img {
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
@@ -970,14 +962,14 @@ footer a:hover {
   -o-border-radius: 50%;
 }
 
-.m-left{
+.m-left {
   margin-left: auto;
 }
 
-.follow button{
+.follow button {
   background-color: black;
   color: white;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 3rem;
   -webkit-border-radius: 3rem;
@@ -987,7 +979,7 @@ footer a:hover {
   cursor: pointer;
 }
 
-.notifications .header{
+.notifications .header {
   border-bottom: 1px solid rgba(168, 207, 239, 0.285);
 }
 
@@ -1006,11 +998,11 @@ footer a:hover {
   cursor: pointer;
 }
 
-.p-1{
+.p-1 {
   padding: 1rem;
 }
 
-.notification-bar img{
+.notification-bar img {
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
@@ -1021,35 +1013,35 @@ footer a:hover {
   cursor: pointer;
 }
 
-.notification-bar .bar{
+.notification-bar .bar {
   border-bottom: 1px solid rgba(168, 207, 239, 0.285);
   padding: 1rem;
   cursor: pointer;
 }
 
-.notification-bar .bar .btn{
+.notification-bar .bar .btn {
   min-height: 3rem;
   min-width: 3rem;
   color: royalblue;
 }
 
-.header{
+.header {
   width: 100%;
 }
 
-.messages .header .actions{
+.messages .header .actions {
   margin-left: auto;
 }
 
-.messages .search{
+.messages .search {
   margin: 1rem;
 }
 
-.messages .others{
+.messages .others {
   width: 120rem;
 }
 
-.message-request{
+.message-request {
   display: flex;
   place-items: center;
   width: 100%;
@@ -1058,10 +1050,10 @@ footer a:hover {
   background-color: transparent;
 }
 
-.message-request .btn{
+.message-request .btn {
   border: 1px solid rgba(0, 0, 0, 0.111);
   font-size: 20px;
-  padding: .5rem;
+  padding: 0.5rem;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
@@ -1072,27 +1064,30 @@ footer a:hover {
   background-color: white;
 }
 
-.message-request:hover, .list-chat .item:hover, .chat-bar .top:hover{
+.message-request:hover,
+.list-chat .item:hover,
+.chat-bar .top:hover {
   cursor: pointer;
   background-color: rgba(65, 105, 225, 0.033);
 }
 
-.list-chat .item{
+.list-chat .item {
   padding: 1rem;
   cursor: pointer;
   display: flex;
 }
 
-.align-center{
+.align-center {
   align-self: center;
 }
 
-.item .name *{
+.item .name * {
   align-self: center;
   font-size: 12px;
 }
 
-.list-chat img.img, .chat-bar img.img{
+.list-chat img.img,
+.chat-bar img.img {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -1102,12 +1097,12 @@ footer a:hover {
   -o-border-radius: 50%;
 }
 
-.chat-bar{
+.chat-bar {
   display: flex;
   flex-direction: column;
 }
 
-.chat-bar .top{
+.chat-bar .top {
   margin: auto;
   text-align: center;
   padding: 1rem;
@@ -1118,9 +1113,9 @@ footer a:hover {
   -o-border-radius: 1rem;
 }
 
-.rec p{
+.rec p {
   background-color: rgba(0, 59, 176, 0.083);
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 1rem 1rem 1rem 0rem;
   -webkit-border-radius: 1rem 1rem 1rem 0rem;
   -moz-border-radius: 1rem 1rem 1rem 0rem;
@@ -1130,7 +1125,7 @@ footer a:hover {
   margin-right: auto;
 }
 
-.chats{
+.chats {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1141,13 +1136,13 @@ footer a:hover {
   margin-bottom: 0rem;
 }
 
-.sen{
+.sen {
   margin-left: auto;
 }
 
-.sen p{
+.sen p {
   background-color: rgb(8, 86, 255);
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 1rem 1rem 1rem 0rem;
   -webkit-border-radius: 1rem 1rem 1rem 0rem;
   -moz-border-radius: 1rem 1rem 1rem 0rem;
@@ -1157,19 +1152,19 @@ footer a:hover {
   color: white;
 }
 
-.chats *{
+.chats * {
   font-size: 13px;
 }
 
-.input-bar{
+.input-bar {
   width: 100%;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   border-top: 1px solid rgba(65, 105, 225, 0.296);
 }
 
-.input{
+.input {
   display: flex;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: rgba(65, 105, 225, 0.071);
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -1178,48 +1173,74 @@ footer a:hover {
   -o-border-radius: 1rem;
 }
 
-.input .btn{
+.input .btn {
   height: 2rem;
   width: 2rem;
   color: royalblue;
 }
 
-.text-input input{
+.text-input input {
   width: 100%;
   border: none;
   background-color: transparent;
-  margin-left: .25rem;
+  margin-left: 0.25rem;
 }
 
-.text-input{
+.text-input {
   width: 100%;
   display: flex;
 }
 
-.input-bar{
+.input-bar {
   position: relative;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.relative{
+.relative {
   position: relative;
 }
 
-.text-input button{
+.text-input button {
   border: none;
   background-color: transparent;
 }
 
-.w-max{
+.w-max {
   width: max-content;
 }
 
-.input .act{
+.input .act {
   align-items: center;
 }
 
-.btn{
+.btn {
   cursor: pointer;
+}
+
+.eng {
+  display: flex;
+  place-items: center;
+}
+
+.tweet-bar .actions {
+  padding: 0;
+  margin: 0;
+}
+
+.tweet-bar .actions button {
+  padding: 0;
+}
+
+.draft.comment{
+  padding: 1rem 0;
+}
+
+.draft.comment * {
+  font-size: 12px;
+}
+
+.blue{
+  color: royalblue;
 }
