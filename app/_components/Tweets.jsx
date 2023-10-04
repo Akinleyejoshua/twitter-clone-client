@@ -26,7 +26,7 @@ export const Tweets = ({ data }) => {
             img: "https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png",
         },
     ];
-
+    const rand = () => Math.floor(Math.random() * 1000)
     const arr = [
         {
             _id: 0,
@@ -41,10 +41,10 @@ export const Tweets = ({ data }) => {
                 "https://media.istockphoto.com/id/1224500457/photo/programming-code-abstract-technology-background-of-software-developer-and-computer-script.jpg?s=612x612&w=0&k=20&c=nHMypkMTU1HUUW85Zt0Ff7MDbq17n0eVeXaoM9Knt4Q=",
                 "https://media.istockphoto.com/id/537331500/photo/programming-code-abstract-technology-background-of-software-deve.jpg?s=612x612&w=0&k=20&c=jlYes8ZfnCmD0lLn-vKvzQoKXrWaEcVypHnB5MuO-g8="
             ],
-            likes: 0,
-            retweets: 0,
-            comments: 0,
-            chart: 0,
+            likes: rand(),
+            retweets: rand(),
+            comments: rand(),
+            chart: rand(),
             isReTweet: false,
         },
         {
@@ -55,6 +55,11 @@ export const Tweets = ({ data }) => {
                 "My name is Josh and i am building Twitter Clone Minimal Version",
             isMedia: false,
             mediaUrls: [],
+            likes: rand(),
+            retweets: rand(),
+            comments: rand(),
+            chart: rand(),
+            isReTweet: false,
         },
     ];
     const router = useRouter();
