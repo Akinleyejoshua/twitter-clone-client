@@ -45,7 +45,7 @@ export const Tweets = ({ data }) => {
             retweets: 0,
             comments: 0,
             chart: 0,
-            
+            isReTweet: false,
         },
         {
             _id: 1,
@@ -78,10 +78,8 @@ export const Tweets = ({ data }) => {
                                 <small>{item.relativeTime}</small>
                             </div>
                             <div
-                                className="content"
-                                onClick={() => router.push(`/tweet/${item._id}`)}
-                            >
-                                {item.contentText !== "" && <div>
+                                className="content">
+                                {item.contentText !== "" && <div onClick={() => router.push(`/tweet/${item._id}`)}>
                                     <p>{item.contentText}</p>
                                 </div>}
 
@@ -116,27 +114,27 @@ export const Tweets = ({ data }) => {
                                 <button>
                                     <BiComment className="btn" />
                                     <div className="space"></div>
-                                    <p>16.5k</p>
+                                    <p>{item?.likes}</p>
                                 </button>
                                 <div className="space-1"></div>
 
                                 <button>
                                     <AiOutlineRetweet className="btn" />
                                     <div className="space"></div>
-                                    <p>2k</p>
+                                    <p>{item?.retweets}</p>
                                 </button>
                                 <div className="space-1"></div>
 
                                 <button>
                                     <AiOutlineHeart className="btn" />
                                     <div className="space"></div>
-                                    <p>16.5k</p>
+                                    <p>{item?.comments}</p>
                                 </button>
                                 <div className="space-1"></div>
                                 <button>
                                     <AiOutlineBarChart className="btn" />
                                     <div className="space"></div>
-                                    <p>1.5k</p>
+                                    <p>{item?.chart}</p>
                                 </button>
                                 <div className="space-1"></div>
 
