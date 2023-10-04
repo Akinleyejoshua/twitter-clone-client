@@ -57,6 +57,7 @@
 .avater{
     position: relative;
     display: none;
+    width: 100%;
 }
 
 .avater img.img{
@@ -74,7 +75,12 @@
     position: absolute;
     right: 0;
     top: 0;
+    transform: translate(-1rem, 1.5rem);
     color: royalblue;
+    -webkit-transform: translate(-1rem, 1.5rem);
+    -moz-transform: translate(-1rem, 1.5rem);
+    -ms-transform: translate(-1rem, 1.5rem);
+    -o-transform: translate(-1rem, 1.5rem);
 }
 
 
@@ -120,7 +126,8 @@
     }
 
     .avater{
-        display: initial;
+        display: flex;
+        flex-direction: column;
     }
 
     .avater .logout{

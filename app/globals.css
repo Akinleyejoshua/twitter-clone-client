@@ -358,6 +358,7 @@ textarea:focus {
   min-width: 22rem;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
 }
 
 .feed {
