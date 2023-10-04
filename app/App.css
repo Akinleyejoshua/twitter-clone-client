@@ -103,8 +103,13 @@
     -ms-user-select: none;
     user-select: none;
 }
+
 *:focus {
     outline: none !important;
+}
+
+.justify-center{
+    justify-content: center;
 }
 
 @media screen and (max-width: 740px) {

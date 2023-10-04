@@ -29,6 +29,7 @@ export const Sidebar = ({ nav, toggleNav }) => {
 
                     <div className="avater">
                         <Button
+                        space={true}
                             icon={<AiOutlineLogout />}
                             className={"logout"}
                             space={""}
@@ -57,37 +58,44 @@ export const Sidebar = ({ nav, toggleNav }) => {
 
                 <div className="navlinks">
                     <Button
+                    space={true}
                         icon={<AiOutlineHome />}
                         onClick={() => router.push("/home")}
                         text={"Home"}
                     />
                     <Button
+                    space={true}
                         icon={<AiOutlineSearch />}
                         onClick={() => router.push("/explore")}
                         text={"Explore"}
                     />
                     <Button
+                    space={true}
                         icon={<AiOutlineBell />}
                         onClick={() => router.push("/notifications")}
                         text={"Notifications"}
                     />
 
                     <Button
+                    space={true}
                         icon={<AiOutlineMail />}
                         onClick={() => router.push("/messages")}
                         text={"Messages"}
                     />
                     <Button
+                    space={true}
                         icon={<AiOutlineUnorderedList />}
                         onClick={() => router.push("/home")}
                         text={"List"}
                     />
                     <Button
+                    space={true}
                         icon={<AiOutlineUsergroupAdd />}
                         onClick={() => router.push("/home")}
                         text={"Community"}
                     />
                     <Button
+                    space={true}
                         icon={<AiOutlineUser />}
                         onClick={() => router.push("/profile")}
                         text={"Profile"}
@@ -95,6 +103,7 @@ export const Sidebar = ({ nav, toggleNav }) => {
                 </div>
                 <Space p={"1rem"} />
                 <Button
+                space={false}
                     onClick={() => router.push("/home")}
                     text={"Post"}
                     className={"post"}
