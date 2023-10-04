@@ -17,7 +17,7 @@ export default function Home() {
                 <Draft />
                 <button className="show-posts">Show 70 Posts</button>
                 <section className="ad">
-                    <h1>You may be missing out on ads revenue sharing!</h1>
+                    <h1 className="f-100">You may be missing out on ads revenue sharing!</h1>
                     <p>If eligible, you must be subscribed to X Premium to receive a share of ads revenue.</p>
                     <br />
                     <p>Sign up to X Premium to get access.</p>

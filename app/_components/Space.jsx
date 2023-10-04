@@ -1,0 +1,1 @@
+export const Space = ({ p }) => <div className="space" style={{ padding: `${p}` }}></div>
