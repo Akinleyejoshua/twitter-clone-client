@@ -45,6 +45,7 @@ export const Tweets = ({ data }) => {
             retweets: 0,
             comments: 0,
             chart: 0,
+            
         },
         {
             _id: 1,

@@ -873,14 +873,18 @@ button *{
     font-size: 12px;
   }
 
-  /* .tweet button svg {
-    font-size: 15px;
-  } */
+  .tweet .content p{
+    font-size: 12px;
+
+  }
 
   .tweet button {
     padding: 0rem;
-    font-size: 15px;
     background-color: transparent;
+  }
+
+  .tweet button *{
+    font-size: 12px;
   }
 
   .tweet button .btn {
@@ -923,9 +927,6 @@ button *{
     min-width: 100%;
   }
 
-  * {
-    font-size: 13px;
-  }
 }
 .others {
   width: 60rem;
