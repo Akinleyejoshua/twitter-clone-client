@@ -33,6 +33,7 @@ export const SigninModal = () => {
                     icon={<AiOutlineLogin className="btn" />}
                     text="Sign in"
                     loading={false}
+                    space={true}
                     onClick={() => router.push("/home")}
                 />
             </form>

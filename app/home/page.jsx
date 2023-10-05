@@ -6,9 +6,14 @@ import { Sidebar } from "@/app/_components/SideBar";
 import { Tweets } from "@/app/_components/Tweets";
 import { useState } from "react";
 import { FaSearchengin } from "react-icons/fa6";
+import { useContext } from "react";
+import { GlobalContext } from "@/app/_context/GlobalContext";
 
 export default function Home() {
     const [nav, setNav] = useState(false);
+    const { tweets } = useContext(GlobalContext);
+
+
     return <div className="home-user">
         <Sidebar nav={nav} toggleNav={(val) => setNav(val)} />
         <div className="feed">
@@ -24,7 +29,7 @@ export default function Home() {
                     <div className="space-1"></div>
                     <button>Subscribe Today</button>
                 </section>
-                <Tweets />
+                <Tweets data={tweets} />
             </div>
         </div>
         <div className="others">

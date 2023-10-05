@@ -1,91 +1,38 @@
 "use client"
 
-
 import { Sidebar } from "@/app/_components/SideBar";
-import { useState } from "react";
-import { FaArrowLeft, FaSearchengin } from "react-icons/fa6";
+import { useContext, useState } from "react";
+import { FaSearchengin } from "react-icons/fa6";
 import { useRouter } from "next/navigation"
 import Image from "next/image";
 import Img1 from "../_assets/img1.jpg";
+import { TopBar } from "../_components/TopBar";
+import { GlobalContext } from "../_context/GlobalContext";
+import { formatNumber } from "../utils/helpers";
 
 
 export default function Explore() {
     const [nav, setNav] = useState(false);
     const router = useRouter();
+    const { trends } = useContext(GlobalContext);
 
     return <div className="home-user explore">
         <Sidebar nav={nav} toggleNav={(val) => setNav(val)} />
         <div className="feed">
-            <div className="header row">
-                <FaArrowLeft className="btn" onClick={() => router.push("/home")} />
-            </div>
+            <TopBar text={"Explore"} />
             <div className="main">
-
                 <section className="trends t-1">
                     <p className="b-900 title">Trends for you</p>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Nigeria</small>
+                    {trends.map((item, i) => {
+                        return <div className="trend col" key={i}>
+                            <div className="row">
+                                <small className="black">Trending in {item?.where}</small>
+                            </div>
+                            <b className="b-900 blue">{item?.title}</b>
+                            <small className="black">{formatNumber(item?.posts)} posts</small>
                         </div>
-                        <b className="b-900">DJ Chicken</b>
-                        <small>3,167 posts</small>
-                    </div>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Rock</small>
-                        </div>
-                        <b className="b-900">#twentyonepilots</b>
-                        <small className="black">3,167 posts</small>
-                    </div>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Nigeria</small>
-                        </div>
-                        <b className="b-900">3rd of October</b>
-                        <small className="black">3,167 posts</small>
-                    </div>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Nigeria</small>
-                        </div>
-                        <b className="b-900">DJ Chicken</b>
-                        <small>3,167 posts</small>
-                    </div>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Rock</small>
-                        </div>
-                        <b className="b-900">#twentyonepilots</b>
-                        <small className="black">3,167 posts</small>
-                    </div>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Nigeria</small>
-                        </div>
-                        <b className="b-900">3rd of October</b>
-                        <small className="black">3,167 posts</small>
-                    </div>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Nigeria</small>
-                        </div>
-                        <b className="b-900">DJ Chicken</b>
-                        <small>3,167 posts</small>
-                    </div>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Rock</small>
-                        </div>
-                        <b className="b-900">#twentyonepilots</b>
-                        <small className="black">3,167 posts</small>
-                    </div>
-                    <div className="trend col">
-                        <div className="row">
-                            <small className="black">Trending in Nigeria</small>
-                        </div>
-                        <b className="b-900">3rd of October</b>
-                        <small className="black">3,167 posts</small>
-                    </div>
+                    })}
+
                 </section>
             </div>
         </div>

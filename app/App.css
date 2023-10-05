@@ -118,6 +118,27 @@
     justify-content: center;
 }
 
+.red{
+    color: rgb(255, 139, 139);
+}
+
+.black2{
+    color: black;
+}
+
+.btn{
+    position: relative;
+}
+
+.btn::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 @media screen and (max-width: 740px) {
   
 

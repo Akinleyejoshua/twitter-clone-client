@@ -42,6 +42,7 @@ export const SignupModal = () => {
                         icon={<AiOutlineUserAdd className="btn" />}
                         text="Sign up"
                         loading={false}
+                        space={true}
                         onClick={() => router.push("/home")}
                     />
                 </form>

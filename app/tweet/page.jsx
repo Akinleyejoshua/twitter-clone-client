@@ -1,6 +1,5 @@
 "use client"
 
-
 import { Sidebar } from "@/app/_components/SideBar";
 import { TweetBar } from "@/app/_components/TweetBar";
 import { useState } from "react";

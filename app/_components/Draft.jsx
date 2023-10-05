@@ -43,6 +43,7 @@ export const Draft = () => {
                         <div>
                             <Button
                                 text="Post"
+                                space={true}
                                 icon={<AiOutlineSend className="" />}
                                 onClick={() => { }}
                             />

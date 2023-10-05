@@ -7,7 +7,7 @@ export const LoginBar = () => {
     const router = useRouter();
 
     return <section className="login-bar flex">
-
+        <small>X Minimal Version</small>
         <h1>Happening now</h1>
         <br />
         <h4>Join today.</h4>
