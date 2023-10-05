@@ -29,9 +29,9 @@ export const SignupModal = () => {
                 <form method="dialog">
                     <Input icon={<AiOutlineMail className="btn" />} type={"Email"} placeholder={"Email"}/>
                     <Space p=".5rem"/>
-                    <Input icon={<AiOutlineUser className="btn" />} type={"Username"} placeholder={"Email"}/>
+                    <Input icon={<AiOutlineUser className="btn" />} type={"text"} placeholder={"Username"}/>
                     <Space p=".5rem"/>
-                    <Input icon={<AiOutlineKey className="btn" />} type={"Password"} placeholder={"Email"}/>
+                    <Input icon={<AiOutlineKey className="btn" />} type={"text"} placeholder={"Password"}/>
                     <Space p=".5rem"/>
                     <Msg text={"All fields are required!"} type={"danger"} size={"12px"}/>
                     <Msg text={"Account Created"} type={"success"} size={"12px"}/>
