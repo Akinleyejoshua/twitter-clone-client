@@ -1,7 +1,7 @@
 "use client"
 
 import { createContext, useState } from "react";
-import { formatNumber } from "../utils/helpers";
+import { formatNumber, rand } from "../utils/helpers";
 
 export const GlobalContext = createContext({
     tweets: {}
@@ -11,8 +11,7 @@ export const GlobalProvider = ({ children }) => {
 
     // ============================ TWEETS ===============================================
 
-    // const rand = () => 100;
-    const rand = () => Math.floor(Math.random() * 10000000);
+    // const rand = () => 10000;
 
     const [tweets, setTweets] = useState([
         {
@@ -80,18 +79,88 @@ export const GlobalProvider = ({ children }) => {
         {
             where: "Nigeria",
             title: "#Frontend",
-            post: rand(),
+            posts: rand(),
         },
         {
             where: "Nigeria",
             title: "#Backend",
-            post: rand(),
+            posts: rand(),
         },
         {
             where: "Nigeria",
-            title: "X clone minimal",
+            title: "X clone minimal version",
             posts: rand(),
         }
+    ])
+
+
+    const [follow, setFollow] = useState([
+        {
+            _id: 0,
+            img: tweets[0].mediaUrls[0],
+            id: "@john",
+            name: "John"
+        },
+        {
+            _id: 1,
+            img: tweets[0].mediaUrls[1],
+            id: "@dave",
+            name: "David"
+        }
+    ])
+
+    // ============================= NOTIFICATION ===================================
+    const [notifications, setNotification] = useState([
+        {
+            _id: 0,
+            id: "@AkinleyeJoshua",
+            name: "Akinleye Joshua",
+            img: tweets[0].mediaUrls[1],
+            // type: "liked/retweet/comment/follow/tweet/mention",
+            type: "liked",
+            content: "Developed the X/Twitter Post section - to view tweet & comment frontend #100DaysOfCode https://pic.twitter.com/CJ1nfhVAZg",
+            tweet_id: 1,
+            
+        },
+        {
+            _id: 0,
+            id: "@Akinleye",
+            name: "Akinleye",
+            img: tweets[0].mediaUrls[0],
+            // type: "liked/retweet/comment/follow/tweet/mention",
+            type: "retweet",
+            content: "Developed the X/Twitter Post section - to view tweet & comment frontend #100DaysOfCode https://pic.twitter.com/CJ1nfhVAZg",
+            tweet_id: 1,
+        },
+        {
+            _id: 0,
+            id: "@daveed",
+            name: "Dave",
+            img: tweets[0].mediaUrls[2],
+            // type: "liked/retweet/comment/follow/tweet/mention",
+            type: "comment",
+            content: "Nice Project",
+            tweet_id: 1,
+        },
+        {
+            _id: 0,
+            id: "@John",
+            name: "Johnson",
+            img: tweets[0].mediaUrls[1],
+            // type: "liked/retweet/comment/follow/tweet/mention",
+            type: "follow",
+            content: "",
+        },
+        {
+            _id: 0,
+            id: "@joshua",
+            name: "Josh",
+            img: tweets[0].mediaUrls[2],
+            // type: "liked/retweet/comment/follow/tweet/mention",
+            type: "mention",
+            content: "I saw your project & it's amazing!",
+            tweet_id: 1,
+        },
     ])
 
 
@@ -99,7 +168,9 @@ export const GlobalProvider = ({ children }) => {
         tweets,
         appendTweet,
         like,
-        trends
+        trends,
+        follow,
+        notifications
     }} children={children} />
 
 }

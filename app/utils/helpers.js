@@ -22,3 +22,5 @@ export const formatNumber = (n) => {
     }
     
 };
+
+export const rand = () => Math.floor(Math.random() * 10000000);

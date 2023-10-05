@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation"
 export default function Profile() {
     const [nav, setNav] = useState(false);
     const router = useRouter();
+    // const {id} = router.query;
+    
 
 
     return <div className="home-user profile">

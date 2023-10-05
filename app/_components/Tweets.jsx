@@ -77,30 +77,30 @@ export const Tweets = ({ data }) => {
                         <div className="actions">
                             <button onClick={() => router.push(`/tweet/${item._id}`)}>
                                 <BiComment className="btn" />
-                                <div className="space"></div>
+                                <Space p={".15rem"} />
                                 <p>{formatNumber(item?.comments)}</p>
                             </button>
-                            <Space p={".25rem"} />
+                            {/* <Space p={".25rem"} /> */}
 
                             <button>
                                 <AiOutlineRetweet className="btn blue" />
-                                <div className="space"></div>
+                                <Space p={".15rem"} />
                                 <p>{formatNumber(item?.retweets)}</p>
                             </button>
-                            <Space p={".25rem"} />
+                            {/* <Space p={".25rem"} /> */}
 
                             <button className="far fa-heart red btn" id={item?.likes} onClick={e => like(e)}>
-                                <div className="space"></div>
+                            <Space p={".15rem"} />
                                 <p className="black2">{formatNumber(item?.likes)}</p>
                             </button>
 
-                            <Space p={".25rem"} />
+                            {/* <Space p={".25rem"} /> */}
                             <button>
                                 <AiOutlineBarChart className="btn" />
-                                <div className="space"></div>
+                                <Space p={".15rem"} />
                                 <p>{formatNumber(item?.chart)}</p>
                             </button>
-                            <Space p={".25rem"} />
+                            {/* <Space p={".25rem"} /> */}
 
                             <button>
                                 <AiOutlineShareAlt className="btn" />

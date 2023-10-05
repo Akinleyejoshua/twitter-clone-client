@@ -3,6 +3,7 @@ import Img from "../_assets/img.jpg";
 import Image from "next/image";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useRouter } from "next/navigation"
+import { Space } from "./Space";
 
 export const ChatBar = () => {
     const arr = [{}, {}, {}, {}]
@@ -36,12 +37,14 @@ export const ChatBar = () => {
                         <p className="black">Yo Josh I just started a free group designed to help people in investing & web3 etc grow on Twitter.
                             Your account fits well with our usual members so I was wondering if you would like to join?</p>
                         <small className="black">May 5, 2023, 6:49 PM</small>
+                        <Space p={"1rem"}/>
                     </div>
                     <div className="sen">
                         <p className="black">Oh thanks - I'm in - I'll would join</p>
                         <small className="black">Jun 6, 2023, 3:44 PM</small>
+                        <Space p={"1rem"}/>
                     </div>
-                    <div className="space"></div>
+                    
                 </div>
             })}
             <div className="">

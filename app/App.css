@@ -100,6 +100,23 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.top-search{
+    width: 100%;
+    border-radius: 3rem;
+    background-color: rgba(169, 190, 255, 0.081);
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+    padding: .5rem;
+}
+
+.top-search input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+
 * {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
