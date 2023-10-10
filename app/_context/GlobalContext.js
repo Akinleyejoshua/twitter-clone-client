@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
 import { createContext, useState } from "react";
 import { formatNumber, rand } from "../utils/helpers";
 
 export const GlobalContext = createContext({
-    tweets: {}
-})
+    tweets: {},
+});
 
 export const GlobalProvider = ({ children }) => {
-
     // ============================ TWEETS ===============================================
 
     // const rand = () => 10000;
@@ -51,28 +50,29 @@ export const GlobalProvider = ({ children }) => {
             chart: rand(),
             liked: true,
         },
-    ])
+    ]);
 
     const appendTweet = (data) => {
-        setTweets(prevState => ([
-            ...prevState, data
-        ]))
-    }
+        setTweets((prevState) => [...prevState, data]);
+    };
 
     const like = (e) => {
         let target = e.target;
-        let text = e.target.children[1]
-        let id = e.target.id;
+        let btn = e.target.children[1];
+        let text = e.target.children[2];
 
         if (target.className.includes("far")) {
-            target.classList.replace("far", "fa")
-            text.innerHTML = formatNumber(parseInt(id) + parseInt(1))
+            target.classList.replace("far", "fa");
+            let val = parseInt(text.innerHTML) + 1
+            text.innerHTML = val
+            btn.innerHTML = formatNumber(val);
         } else {
-            target.classList.replace("fa", "far")
-            text.innerHTML = formatNumber(parseInt(id) - parseInt(1))
-
+            target.classList.replace("fa", "far");
+            let val = parseInt(text.innerHTML) - 1
+            text.innerHTML = val
+            btn.innerHTML = formatNumber(val);
         }
-    }
+    };
 
     // ========================== TRENDS ========================================
     const [trends, setTrends] = useState([
@@ -90,24 +90,23 @@ export const GlobalProvider = ({ children }) => {
             where: "Nigeria",
             title: "X clone minimal version",
             posts: rand(),
-        }
-    ])
-
+        },
+    ]);
 
     const [follow, setFollow] = useState([
         {
             _id: 0,
             img: tweets[0].mediaUrls[0],
             id: "@john",
-            name: "John"
+            name: "John",
         },
         {
             _id: 1,
             img: tweets[0].mediaUrls[1],
             id: "@dave",
-            name: "David"
-        }
-    ])
+            name: "David",
+        },
+    ]);
 
     // ============================= NOTIFICATION ===================================
     const [notifications, setNotification] = useState([
@@ -118,9 +117,9 @@ export const GlobalProvider = ({ children }) => {
             img: tweets[0].mediaUrls[1],
             // type: "liked/retweet/comment/follow/tweet/mention",
             type: "liked",
-            content: "Developed the X/Twitter Post section - to view tweet & comment frontend #100DaysOfCode https://pic.twitter.com/CJ1nfhVAZg",
+            content:
+                "Developed the X/Twitter Post section - to view tweet & comment frontend #100DaysOfCode https://pic.twitter.com/CJ1nfhVAZg",
             tweet_id: 1,
-            
         },
         {
             _id: 0,
@@ -129,7 +128,8 @@ export const GlobalProvider = ({ children }) => {
             img: tweets[0].mediaUrls[0],
             // type: "liked/retweet/comment/follow/tweet/mention",
             type: "retweet",
-            content: "Developed the X/Twitter Post section - to view tweet & comment frontend #100DaysOfCode https://pic.twitter.com/CJ1nfhVAZg",
+            content:
+                "Developed the X/Twitter Post section - to view tweet & comment frontend #100DaysOfCode https://pic.twitter.com/CJ1nfhVAZg",
             tweet_id: 1,
         },
         {
@@ -161,16 +161,85 @@ export const GlobalProvider = ({ children }) => {
             content: "I saw your project & it's amazing!",
             tweet_id: 1,
         },
+    ]);
+
+    // ======================== PROFILE ==========================================
+    const [profile, setProfile] = useState([
+        {
+            id: "@AkinleyeJoshua9",
+            followers: 171,
+            following: 800,
+            name: "Akinleye Joshua",
+            bio: "Internet Researcher",
+            joined: "Joined March 2019",
+            occupation: "Science & Technology",
+            banner: tweets[0].mediaUrls[2],
+            img: "https://pbs.twimg.com/profile_images/1678992283549483012/B1_JQiR-_normal.jpg"
+        },
+        {
+            id: "@joshuaakinleye4",
+            followers: 26,
+            following: 4,
+            name: "Josh",
+            bio: "Internet Researcher",
+            joined: "Joined March 2022",
+            occupation: "Science & Technology",
+            banner: tweets[0].mediaUrls[1],
+            img: "https://pbs.twimg.com/profile_images/1678992283549483012/B1_JQiR-_normal.jpg"
+        },
+    ]);
+
+    const myTweets = tweets.filter((item) => item.id === "@AkinleyeJoshua9");
+
+    // ================== MESSAGES ==================================================
+
+    const [messages, setMessages] = useState([
+        {
+            _id: "1_2",
+            id: "@AkinleyeJoshua9",
+            name: "Akinleye Joshua",
+            followers: 171,
+            following: 800,
+            joined: "Joined March 2019",
+            bio: "Internet Researcher",
+            img: "https://pbs.twimg.com/profile_images/1678992283549483012/B1_JQiR-_normal.jpg",
+            relativeTime: "5h",
+            lastMessage: "You are welcome",
+            chats: [
+                {
+                    id: "@Joshuaakinleye4",
+                    text: "Yo Josh I just started a free group designed to help people in investing & web3 etc grow on Twitter. Your account fits well with our usual members so I was wondering if you would like to join?",
+                    time: "May 5, 2023, 6:49 PM",
+                },
+                {
+                    id: "@AkinleyeJoshua9",
+                    text: "Oh thanks - I'm in - I'll would join",
+                    time: "Jun 6, 2023, 3:44 PM",
+                },
+                {
+                    id: "@Joshuaakinleye4",
+                    text: "Okay, you're welcome",
+                    time: "May 5, 2023, 6:49 PM",
+                },
+            ]
+
+        }
     ])
 
-
-    return <GlobalContext.Provider value={{
-        tweets,
-        appendTweet,
-        like,
-        trends,
-        follow,
-        notifications
-    }} children={children} />
-
-}
+    return (
+        <GlobalContext.Provider
+            value={{
+                messages,
+                profile,
+                myTweets,
+                tweets,
+                appendTweet,
+                like,
+                trends,
+                follow,
+                notifications,
+            }}
+            children={children}
+        />
+    );
+};

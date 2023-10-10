@@ -98,6 +98,7 @@
     grid-gap: .5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); */
 }
 
 .top-search{
@@ -156,6 +157,11 @@
     bottom: 0;
 }
 
+.no-show{
+    width: 0%;
+    opacity: 0;
+}
+
 @media screen and (max-width: 740px) {
   
 
@@ -171,5 +177,9 @@
     .avater .logout{
         display: flex;
         top: -2rem;
+    }
+
+    .banner{
+        height: 10rem;
     }
 }

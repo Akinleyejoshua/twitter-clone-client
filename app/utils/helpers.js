@@ -23,4 +23,19 @@ export const formatNumber = (n) => {
     
 };
 
-export const rand = () => Math.floor(Math.random() * 10000000);
+
+var UpperNumber = function () {
+    return Math.floor(Math.random() * 100000);
+};
+var upperNumber = UpperNumber();
+
+var LastNumber = function () {
+    return Math.floor(Math.random() * 1);
+};
+var lastNumber = LastNumber();
+
+export function rand() {
+    return Math.floor(Math.random() * (upperNumber - lastNumber + 1) + lastNumber);
+};
+
+// export const rand = () => 1;

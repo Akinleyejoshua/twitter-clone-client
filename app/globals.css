@@ -700,8 +700,7 @@ button * {
   display: flex;
   justify-content: flex-start;
   place-items: center;
-  /* width: 100%; */
-  /* max-width: 4rem; */
+  width: 100%;
   border-radius: 3rem;
   -webkit-border-radius: 3rem;
   -moz-border-radius: 3rem;
@@ -721,7 +720,8 @@ button * {
 }
 
 .tweet .content img.img {
-  height: 15rem;
+  /* height: 15rem; */
+  height: 100%;
   width: 100%;
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -737,7 +737,7 @@ button * {
 }
 
 .search {
-  padding: 1rem;
+  padding: .5rem 1rem;
   background-color: whitesmoke;
   border-radius: 3rem;
   -webkit-border-radius: 3rem;
@@ -746,6 +746,10 @@ button * {
   -o-border-radius: 3rem;
   display: flex;
   place-items: center;
+}
+
+.search .btn{
+  font-size: 20px;
 }
 
 .search input {
@@ -879,12 +883,21 @@ button * {
     padding: 0.5rem;
   }
 
-  .tweet .bio * {
+  .tweet{
+    padding: 1rem .5rem 0 .5rem;
+  }
+
+  .tweet .bio .name{
     font-size: 12px;
+    font-weight: bold;
+  }
+
+  .tweet .bio * {
+    font-size: 10px;
   }
 
   .tweet .content p {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .tweet button {
@@ -893,12 +906,26 @@ button * {
   }
 
   .tweet button * {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .tweet .actions {
     width: 100%;
     margin-top: 0rem;
+  }
+
+  .tweet .btn{
+    height: 1rem;
+    width: 1rem;
+  }
+
+  /* .tweet button{
+    min-width: 4rem;
+  } */
+
+
+  .tweet button:not(:last-child){
+  width: 100%;
   }
 
   .tweet .content img.img {
@@ -910,19 +937,14 @@ button * {
   .draft img.img,
   .tweet .img img.img,
   .home-header img.img {
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     cursor: pointer;
-  }
-
-  .tweet .actions .space-1,
-  .tweet .actions .space {
-    padding: 0.15rem;
   }
 
   .tweet .content img.img {
@@ -938,17 +960,15 @@ button * {
   color: royalblue;
 }
 
-.tweet .bio .name {
-  width: max-content;
-  overflow: hidden;
-  font-weight: 900;
-  font-size: 15px;
-}
-
 .tweet small {
   color: rgba(0, 0, 0, 0.5);
   letter-spacing: 0px;
   font-size: 12px;
+}
+
+.tweet .bio .name{
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .home-user.profile .home-header {
@@ -961,8 +981,8 @@ button * {
 }
 
 .header h1 {
-  align-self: center;
-  padding: 0 1rem;
+  /* align-self: center; */
+  /* padding: 0 1rem; */
   font-size: 20px;
 }
 
@@ -1094,7 +1114,7 @@ button * {
 .header .col {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .header button {
@@ -1127,9 +1147,9 @@ button * {
   cursor: pointer;
 }
 
-/* .notification-bar:hover{
+.notification-bar .bar:hover{
   opacity: .5;
-} */
+}
 
 .notification-bar .bar .btn {
   min-height: 2.5rem;
@@ -1150,6 +1170,7 @@ button * {
 
 .messages .others {
   width: 120rem;
+  padding: 0;
 }
 
 .message-request {
@@ -1212,6 +1233,8 @@ button * {
   display: flex;
   flex-direction: column;
   padding: 0.25rem;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .chat-bar .top {
@@ -1361,4 +1384,9 @@ button * {
 .comment .utils {
   padding-bottom: 0;
   border: none;
+}
+
+
+.top-bar *{
+  margin: auto 0;
 }

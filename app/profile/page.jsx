@@ -4,32 +4,27 @@ import { HomeHeader } from "@/app/_components/HomeHeader";
 import { ProfileBar } from "@/app/_components/ProfileBar";
 import { Sidebar } from "@/app/_components/SideBar";
 import { Tweets } from "@/app/_components/Tweets";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaArrowLeft, FaSearchengin } from "react-icons/fa6";
 import { useRouter } from "next/navigation"
+import { TopBar } from "../_components/TopBar";
+import { GlobalContext } from "../_context/GlobalContext";
 
 export default function Profile() {
     const [nav, setNav] = useState(false);
     const router = useRouter();
     // const {id} = router.query;
-    
-
+    const {myTweets, profile} = useContext(GlobalContext);
+    const myProfile = profile[0];
 
     return <div className="home-user profile">
         <Sidebar nav={nav} toggleNav={(val) => setNav(val)} />
         <div className="feed">
             <HomeHeader toggleNav={(val) => setNav(val)} />
             <div className="main">
-                <div className="header row">
-                    <FaArrowLeft className="btn" onClick={() => router.push("/home")} />
-                    <div className="col">
-                        <h1 className="b-900">Josh</h1>
-                        <small className="black">172 posts</small>
-                    </div>
-                    
-                </div>
-                <ProfileBar />
-                <Tweets />
+                <TopBar text={myProfile.name} other={true} textBtm={`${myTweets.length} Tweets`}/>
+                <ProfileBar data={myProfile}/>
+                <Tweets data={myTweets}/>
             </div>
         </div>
         <div className="others">

@@ -25,7 +25,7 @@ export const Tweets = ({ data }) => {
                     <div className="img">
                         <Image src={Img} alt="" className="img" />
                     </div>
-                    <div className="space"></div>
+                    <Space p={".15rem"} />
                     <div className="col w-100">
                         <div className="row bio">
                             <p className="name">{item?.name}</p>
@@ -77,27 +77,33 @@ export const Tweets = ({ data }) => {
                         <div className="actions">
                             <button onClick={() => router.push(`/tweet/${item._id}`)}>
                                 <BiComment className="btn" />
-                                <Space p={".15rem"} />
+                                <Space p={".1rem"} />
                                 <p>{formatNumber(item?.comments)}</p>
                             </button>
                             {/* <Space p={".25rem"} /> */}
 
                             <button>
                                 <AiOutlineRetweet className="btn blue" />
-                                <Space p={".15rem"} />
+                                <Space p={".1rem"} />
                                 <p>{formatNumber(item?.retweets)}</p>
                             </button>
                             {/* <Space p={".25rem"} /> */}
 
-                            <button className="far fa-heart red btn" id={item?.likes} onClick={e => like(e)}>
-                            <Space p={".15rem"} />
+                            {item?.liked === true ? <button className="fa fa-heart red btn" onClick={e => like(e)}>
+                                <Space p={".1rem"} />
                                 <p className="black2">{formatNumber(item?.likes)}</p>
-                            </button>
+                                <p className="no-show">{item?.likes}</p>
+                            </button> : <button className="far fa-heart red btn" onClick={e => like(e)}>
+                                <Space p={".1rem"} />
+                                <p className="black2">{formatNumber(item?.likes)}</p>
+                                <p className="no-show">{item?.likes}</p>
+                            </button>}
+
 
                             {/* <Space p={".25rem"} /> */}
                             <button>
                                 <AiOutlineBarChart className="btn" />
-                                <Space p={".15rem"} />
+                                <Space p={".1rem"} />
                                 <p>{formatNumber(item?.chart)}</p>
                             </button>
                             {/* <Space p={".25rem"} /> */}
